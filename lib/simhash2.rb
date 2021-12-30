@@ -37,7 +37,7 @@ module Simhash
     end
 
     simhash = 0
-    HASHBITS.times { |i| simhash += 1 << i if v[i] >= 0 }
+    HASHBITS.times { |i| simhash += 1 << i if v[i] > 0 || (v[i].zero? && i.even?) }
 
     simhash
   end
